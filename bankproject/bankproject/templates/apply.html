@@ -1,0 +1,186 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application form</title>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<section class="site-section bg-light" id="contact-section" data-aos="fade">
+      <div class="container">
+     <div class="row">
+          <div class="col-md-12 mb-5">
+
+
+
+            <form action="submit" class="p-5 bg-white" method="post">
+                	{% csrf_token %}
+
+              <h2 class="h4 text-black mb-5">Application Form</h2>
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname" >First Name</label>
+                  <input type="text" id="fname" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control" required>
+                </div>
+              </div>
+            <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">Date of birth</label>
+                  <input type="date" id="dob" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Gender</label>
+
+                       <select id="gender" class="form-control" required>
+
+                           <option >Male</option>
+                           <option >Female</option>
+                       </select>
+
+                </div>
+              </div>
+                <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Phone Number</label>
+                  <input type="number" id="phonenumber" class="form-control" required>
+                </div>
+              </div>
+              <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label>
+                  <input type="email" id="email" class="form-control" required>
+                </div>
+              </div>
+
+
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Address</label>
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" required></textarea>
+                </div>
+              </div>
+                <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" >District</label>
+                  <select id="district" class="form-control" required>
+                            <option >Thiruvanathapuram</option>
+                            <option >Ernakulam</option>
+                            <option >Malappuram</option>
+                            <option >Kozhikode</option>
+                            <option >Kannur</option>
+                       </select>
+                </div>
+              </div>
+                <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" >Branch</label>
+                   <select id="branch" class="form-control" required>
+                            <option >Vattapara</option>
+                            <option >Aruvikkara</option>
+                            <option >karukapalli</option>
+                            <option >edappalli</option>
+                            <option >kondotty</option>
+                             <option >kottakkal</option>
+                        <option >mananchira</option>
+                        <option >nadakkavu</option>
+                        <option >payyannur</option>
+                        <option >thaliparambu</option>
+                       </select>
+                </div>
+                </div>
+                    <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" >Account type</label>
+                   <select id="account" class="form-control" required>
+                            <option >Savings account</option>
+                            <option >current account</option>
+
+                       </select>
+                </div>
+              </div>
+                    <div class="row form-group">
+
+                <div class="col-md-12">
+                    <label class="text-black" >Materials provide</label><br>
+                    <input type="checkbox" id="debitcard" name="debitcard" value="debit card">
+                    <label for="debitcard"> debit card</label><br>
+                    <input type="checkbox" id="creditcard" name="creditcard" value="credit card">
+                    <label for="creditcard"> credit card</label><br>
+                    <input type="checkbox" id="chequebook" name="chequebook" value="cheque book">
+                    <label for="chequebook"> cheque book</label><br>
+                </div>
+                    </div>
+              <div class="row form-group" align="center">
+                <div class="col-md-6">
+                    <button value="Submit" class="btn btn-primary btn-md text-white">Submit</button>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-primary btn-md text-white" href="{% url 'credentials:logout' %}">logout</a>
+<!--                        <input type="submit" value="Logout" class="btn btn-primary btn-md text-white"></a>-->
+                </div>
+                </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+</section>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+
+
+  <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+ {% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}
+            <script>alert("{{ message }}")
+
+            </script>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body style="background-image: url({% static 'images/hero_2.jpg' %});" data-aos="fade" id="home-section">
+<form method="post" action="apply">
+    {% csrf_token %}
+    <div class="container" align="center" style="margin-top:200px;">
+    <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+
+            <h3 class="text-black mb-4" style="font-size:50px;">We Solve Your Financial Problem</h3>
+
+            <p style="font-size:30px;margin-left:200px;margin-right:200px;" align="justify">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+          </div>
+<div align="center">
+    <button type="submit" class="btn btn-outline-danger" style="border-radius: 40px;height:60px;font-size: 25px;background-color: #0C356A; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);border: None;padding:15px;color:white;">APPLY NOW</button>
+</div>
+        </div>
+</form>
+</body>
+</html>
